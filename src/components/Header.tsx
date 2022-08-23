@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function Header() {
     return (
-        <div className="bg-gray-300">
-            <h1>Header</h1>
-            <button className="py-2 px-4 border rounded bg-gray-400">Sign In</button>
-        </div>
+        <nav className="flex justify-between items-center bg-gray-300">
+            <Link to="/" className="m-2 text-gray-600 text-">English Wordbook</Link>
+            <button className="m-2 py-2 px-4 border rounded bg-gray-400"><Link to="/auth">Sign In</Link></button>
+        </nav>
     )
 }

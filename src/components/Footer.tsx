@@ -2,6 +2,6 @@ import React from "react";
 
 export function Footer() {
     return (
-        <h1 className="bg-gray-300">Footer</h1>
+        <h1 className="text-center bg-gray-300">Footer</h1>
     )
 } 
