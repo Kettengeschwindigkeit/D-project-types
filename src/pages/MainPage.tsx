@@ -1,15 +1,15 @@
 import React from "react";
 import { ICategory } from "../models";
-import { Category } from "./Category"
+import { Category } from "../components/Category"
 
 interface CategoriesProps {
     categories: ICategory[]
 }
 
-export function MainContent({ categories }: CategoriesProps) {
+export function MainPage({ categories }: CategoriesProps) {
     return (
         <ul>
-            <ul className="bg-gray-300 w-40 top-0 bottom-0">
+            <ul className="w-[200px] bg-gray-300 top-0 bottom-0">
                 {categories.map(category => <Category key={category.id} category={category} />)}
             </ul>
             {/* {categories.map(category => (

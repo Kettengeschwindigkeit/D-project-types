@@ -31,7 +31,12 @@ import { ICategory } from "./../models";
 // }
 
 export const categories: ICategory[] = [
-  //   { id: 1, name: "WORDS", path: "/words", subCategories: null },
+    { id: 1, name: "WORDS", path: "/words", subCategories: [
+      { id: 1, title: "Universal", path: "/universal" },
+      { id: 2, title: "About time", path: "/about_time" },
+      { id: 3, title: "About space", path: "/about_sapce" },
+      { id: 4, title: "About amount", path: "/about_amount" }
+    ] },
   //   { id: 2, name: "WORDS-PHRASES", path: "/words_phrases", subCategories: null },
   {
     id: 3,
