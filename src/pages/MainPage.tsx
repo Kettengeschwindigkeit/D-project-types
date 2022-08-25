@@ -1,25 +1,21 @@
-import React from "react";
-import { ICategory } from "../models";
-import { Category } from "../components/Category"
+import React from "react"
+import { Route, Routes } from "react-router-dom"
+import { ICategory, IDataItem } from "../models"
+import { Items } from "../components/Items"
+import { Navbar } from "../components/Navbar"
 
-interface CategoriesProps {
-    categories: ICategory[]
+interface MainPageProps {
+  categories: ICategory[]
+  data: IDataItem[]
 }
 
-export function MainPage({ categories }: CategoriesProps) {
-    return (
-        <ul>
-            <ul className="w-[200px] bg-gray-300 top-0 bottom-0">
-                {categories.map(category => <Category key={category.id} category={category} />)}
-            </ul>
-            {/* {categories.map(category => (
-          <>
-            <li key={category.id}>{category.name}</li>
-            <ul>
-              {category.subCategories.map(sub => <li className="border rounded py-2 px-4" key={sub.id}>{sub.title}</li>)}
-            </ul>
-          </>
-        ))} */}
-        </ul>
-    )
+export function MainPage({ categories, data }: MainPageProps) {
+  return (
+    <ul>
+      <Navbar categories={categories} />
+      <Routes>
+        {data.map(item => <Route path={`/${item.title}`} element={<Items data={item.content} />} key={item.id + Date.now()} />)}
+      </Routes>
+    </ul>
+  )
 }
