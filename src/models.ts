@@ -7,7 +7,7 @@ export interface ICategory {
 }
 
 interface ISubCategory {
-    id: number
+    id: number | string
     title: string
     path: string
 }
